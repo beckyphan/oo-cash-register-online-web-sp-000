@@ -1,7 +1,7 @@
 require 'pry'
 
 class CashRegister
-  attr_accessor :total, :discount, :cart
+  attr_accessor :total, :discount, :cart, :prev_total
   
   def initialize(discount = nil)
     @total = 0 
@@ -17,8 +17,8 @@ class CashRegister
   
   
   def add_item(title, price, qty = nil)
+    @prev_total = @total
     qty == nil ? @cart << [title, price] : @cart << [title, price, qty]
-    
   # @cart = [[title, price, qty], [title1, price1, qty1]
     if @cart.size == 0 
       nil
@@ -63,7 +63,7 @@ class CashRegister
   
   def void_last_transaction
     @cart.pop
-    self.total
+    @total = @prev_total
   end
   
 end
