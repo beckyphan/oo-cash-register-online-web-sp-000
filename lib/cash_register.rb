@@ -25,9 +25,9 @@ class CashRegister
     else
       @cart.each do |item|
         if item.size == 2 
-          @total += item[1]
+          @total = @prev_total + item[1]
         elsif item.size == 3
-          @total += (item[1] * item[2])
+          @total= @prev_total + (item[1] * item[2])
         end
       end
     end
