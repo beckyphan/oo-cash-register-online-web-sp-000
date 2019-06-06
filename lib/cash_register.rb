@@ -41,7 +41,7 @@ class CashRegister
       discounted = @discount.to_f / 100 * subtotal
       grand_total = subtotal - discounted
       @total = grand_total
-      "After the discount, the total comes to $#{grand_total.to_i}."
+      "After the discount, the total comes to $#{grand_total}."
     end
   end
   
