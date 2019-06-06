@@ -20,7 +20,7 @@ class CashRegister
         if item.size == 2 
           @total += (item[1] * 1.0)
         elsif item.size == 3
-          @total += (item[1] * item[2])
+          @total += (item[1].to_f * item[2])
         end
       end
     end
