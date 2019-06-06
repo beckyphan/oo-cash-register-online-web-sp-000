@@ -37,10 +37,9 @@ class CashRegister
     if self.discount == nil
       "There is no discount to apply."
     else 
-      subtotal = @total
-      discounted = @discount.to_f / 100 * subtotal
-      grand_total = subtotal - discounted
-      "After the discount, the total comes to $#{grand_total}."
+      discounted = @discount.to_f / 100 * @total
+      @total -= discounted
+      "After the discount, the total comes to $#{@total}."
     end
   end
   
