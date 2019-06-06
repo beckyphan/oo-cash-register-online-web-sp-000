@@ -1,5 +1,3 @@
-require 'pry'
-
 class CashRegister
   attr_accessor :total, :discount, :cart, :prev_total
   
@@ -31,7 +29,6 @@ class CashRegister
         end
       end
     end
-    binding.pry
   end
 
 
