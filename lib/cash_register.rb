@@ -31,6 +31,7 @@ class CashRegister
         end
       end
     end
+    @total
   end
 
 
