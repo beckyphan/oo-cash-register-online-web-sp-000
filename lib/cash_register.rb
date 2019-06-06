@@ -36,8 +36,7 @@ class CashRegister
   def apply_discount
     if self.discount != nil
       subtotal = self.total
-      grand_total = subtotal - (@discount.to_f / 100 * subtotal)
-      binding.pry
+      grand_total = subtotal - (self.discount.to_f / 100 * subtotal)
       puts "After the discount, the total comes to #{grand_total}."
     else 
       puts "There is no discount to apply."
