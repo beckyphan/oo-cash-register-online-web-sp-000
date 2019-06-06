@@ -31,7 +31,7 @@ class CashRegister
         end
       end
     end
-    @total
+    @prev_total
   end
 
 
