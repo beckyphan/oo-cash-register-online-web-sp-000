@@ -20,7 +20,7 @@ class CashRegister
         if item.size == 2 
           @total += (item[1] * 1.0)
         elsif item.size == 3
-          @total += (item[1].to_f * item[2])
+          @total += (item[1] * item[2])
         end
       end
     end
@@ -29,7 +29,7 @@ class CashRegister
   
   
   def add_item(title, price, qty = nil)
-    qty == nil ? @cart << [title, price] : @cart << [title, price, qty]
+    qty == nil ? @cart << [title, price.to_f] : @cart << [title, price.to_f, qty]
   end
 
 
