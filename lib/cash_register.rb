@@ -29,7 +29,6 @@ class CashRegister
   
   
   def add_item(title, price, qty = nil)
-    self.total
     qty == nil ? @cart << [title, price] : @cart << [title, price, qty]
   end
 
