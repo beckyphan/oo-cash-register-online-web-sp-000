@@ -30,7 +30,6 @@ class CashRegister
   
   def add_item(title, price, qty = nil)
     qty == nil ? @cart << [title, price] : @cart << [title, price, qty]
-    binding.pry
   end
 
 
@@ -38,6 +37,7 @@ class CashRegister
     if self.discount != nil
       subtotal = self.total
       grand_total = subtotal - (@discount.to_f / 100 * subtotal)
+      binding.pry
       puts "After the discount, the total comes to #{grand_total}."
     else 
       puts "There is no discount to apply."
