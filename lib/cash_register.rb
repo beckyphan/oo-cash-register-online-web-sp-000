@@ -12,6 +12,13 @@ class CashRegister
 
   
   def total
+    @total
+  end 
+  
+  
+  def add_item(title, price, qty = nil)
+    qty == nil ? @cart << [title, price] : @cart << [title, price, qty]
+    
   # @cart = [[title, price, qty], [title1, price1, qty1]
     if @cart.size == 0 
       nil
@@ -24,12 +31,6 @@ class CashRegister
         end
       end
     end
-    @total
-  end 
-  
-  
-  def add_item(title, price, qty = nil)
-    qty == nil ? @cart << [title, price] : @cart << [title, price, qty]
   end
 
 
