@@ -34,12 +34,13 @@ class CashRegister
 
 
   def apply_discount
-    if self.discount != nil
-      subtotal = self.total
-      grand_total = subtotal - (self.discount.to_f / 100 * subtotal)
-      puts "After the discount, the total comes to #{grand_total}."
-    else 
+    if self.discount == nil
       puts "There is no discount to apply."
+    else 
+      subtotal = self.total
+      discounted = self.discount.to_f / 100 * subtotal
+      grand_total = subtotal - discounted
+      puts "After the discount, the total comes to #{grand_total}."
     end
   end
   
