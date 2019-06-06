@@ -24,7 +24,7 @@ class CashRegister
         end
       end
     end
-    @total
+    @total.to_d
   end 
   
   
