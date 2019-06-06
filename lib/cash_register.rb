@@ -31,7 +31,7 @@ class CashRegister
         end
       end
     end
-    @prev_total
+    binding.pry
   end
 
 
