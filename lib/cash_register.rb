@@ -40,6 +40,7 @@ class CashRegister
       subtotal = self.total
       discounted = self.discount.to_f / 100 * subtotal
       grand_total = subtotal - discounted
+      self.total = grand_total
       "After the discount, the total comes to #{grand_total}."
     end
   end
