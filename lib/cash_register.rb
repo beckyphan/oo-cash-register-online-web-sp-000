@@ -1,10 +1,10 @@
 require 'pry'
 
 class CashRegister
-  attr_accessor :subtotal, :discount, :cart
+  attr_accessor :total, :discount, :cart
   
   def initialize(discount = nil)
-    @subtotal = 0 
+    @total = 0 
     @discount = discount
     @cart = []
     @itemized_list = []
@@ -24,7 +24,7 @@ class CashRegister
         end
       end
     end
-    @subtotal
+    @total
   end 
   
   
@@ -38,9 +38,9 @@ class CashRegister
     if self.discount == nil
       "There is no discount to apply."
     else 
-      discounted = @discount.to_f / 100 * @subtotal
-      @subtotal -= discounted
-      "After the discount, the total comes to $#{@subtotal}."
+      discounted = @discount.to_f / 100 * @total
+      @total -= discounted
+      "After the discount, the total comes to $#{@total}."
     end
   end
   
@@ -64,7 +64,6 @@ class CashRegister
   def void_last_transaction
     @cart.pop
     self.total
-    binding.pry
   end
   
 end
