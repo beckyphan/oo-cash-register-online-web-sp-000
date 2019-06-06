@@ -29,7 +29,7 @@ class CashRegister
   
   
   def add_item(title, price, qty = nil)
-    qty == nil ? @cart << [title, price.to_f] : @cart << [title, price.to_f, qty]
+    qty == nil ? @cart << [title, price] : @cart << [title, price, qty]
   end
 
 
@@ -40,7 +40,6 @@ class CashRegister
       subtotal = @total
       discounted = @discount.to_f / 100 * subtotal
       grand_total = subtotal - discounted
-      @total = grand_total
       "After the discount, the total comes to $#{grand_total}."
     end
   end
